@@ -7,11 +7,10 @@ class AccountSchema(BaseModel):
         None, description="The unique identifier of the account")
     name: str = Field(min_length=3, max_length=25,
                       description="The name of the account")
-    balance: float = Field(ge=0, description="The balance of the account")
-    this_month_expense: Optional[float] = Field(None, ge=0,
-                                                description="The expense for the current month")
-    this_month_income: Optional[float] = Field(None, ge=0,
-                                               description="The income for the current month")
+    initial_balance: float = Field(
+        ge=0, description="The initial balance of the account")
+    current_balance: float = Field(
+        ge=0, description="The current balance of the account")
     account_type: str = Field(min_length=5, max_length=15,
                               description="The type of the account, e.g., bank, cash")
 

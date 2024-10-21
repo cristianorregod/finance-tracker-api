@@ -16,7 +16,7 @@ class Transaction(Base):
     type = Column(String, nullable=False)  # 'income' or 'expense' or 'saves'
     description = Column(String, nullable=False)
     amount = Column(Float, nullable=False)
-    transaction_date = Column(String, nullable=False)
+    transaction_date = Column(Date, nullable=False)
     created_at = Column(DateTime, default=func.now(), nullable=False)
     updated_at = Column(DateTime, default=func.now(),
                         onupdate=func.now(), nullable=False)

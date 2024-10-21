@@ -8,9 +8,8 @@ class Account(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
-    balance = Column(Float, nullable=False,  default=0)
-    this_month_expense = Column(Float, nullable=True, default=0)
-    this_month_income = Column(Float, nullable=True, default=0)
+    initial_balance = Column(Float, nullable=False,  default=0)
+    current_balance = Column(Float, nullable=True, default=0)
     account_type = Column(String, nullable=False)
     created_at = Column(DateTime, default=func.now(), nullable=False)
     updated_at = Column(DateTime, default=func.now(),

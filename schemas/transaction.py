@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
+from datetime import date
 
 
 class TransactionSchema(BaseModel):
@@ -17,7 +18,7 @@ class TransactionSchema(BaseModel):
                              description="Short description or name of the transaction")
     amount: float = Field(
         ge=0, description="The expense for the current transaction")
-    transaction_date: str = Field(
+    transaction_date: date = Field(
         description="The date when transaction is applied")
 
     class Config:
