@@ -13,6 +13,8 @@ class BudgetSchema(BaseModel):
         description="The remaining amount of the budget")
     spent_amount: Optional[float] = Field(None,
                                           description="The remaining amount of the budget")
+    icon: Optional[str] = Field(
+        None, description="The icon of the budget")
 
     class Config:
         orm_mode = True

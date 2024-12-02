@@ -11,6 +11,7 @@ class Budget(Base):
     amount = Column(Float, nullable=False)
     remaining_amount = Column(Float, nullable=False)
     spent_amount = Column(Float, nullable=True, default=0)
+    icon = Column(String, nullable=True)
     created_at = Column(DateTime, default=func.now(), nullable=False)
     updated_at = Column(DateTime, default=func.now(),
                         onupdate=func.now(), nullable=False)

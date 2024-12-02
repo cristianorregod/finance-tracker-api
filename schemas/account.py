@@ -13,6 +13,8 @@ class AccountSchema(BaseModel):
         ge=0, description="The current balance of the account")
     account_type: str = Field(min_length=5, max_length=15,
                               description="The type of the account, e.g., bank, cash")
+    icon: str = Field(min_length=3, max_length=25,
+                      description="The icon of the account")
 
     class Config:
         orm_mode = True

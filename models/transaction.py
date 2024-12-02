@@ -14,9 +14,12 @@ class Transaction(Base):
     budget_id = Column(Integer, ForeignKey('budgets.id'),
                        nullable=True, default=None)
     type = Column(String, nullable=False)  # 'income' or 'expense' or 'saves'
+    category_id = Column(Integer, ForeignKey('categories.id'),
+                         nullable=True, default=None)
     description = Column(String, nullable=False)
     amount = Column(Float, nullable=False)
     transaction_date = Column(Date, nullable=False)
+    icon = Column(String, nullable=True)
     created_at = Column(DateTime, default=func.now(), nullable=False)
     updated_at = Column(DateTime, default=func.now(),
                         onupdate=func.now(), nullable=False)
@@ -26,3 +29,4 @@ class Transaction(Base):
     to_account = relationship("Account", foreign_keys=[
                               to_account_id], back_populates="to_transactions")
     budget = relationship("Budget", back_populates="transactions")
+    category = relationship("Category", back_populates="transactions")

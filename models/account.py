@@ -11,6 +11,7 @@ class Account(Base):
     initial_balance = Column(Float, nullable=False,  default=0)
     current_balance = Column(Float, nullable=True, default=0)
     account_type = Column(String, nullable=False)
+    icon = Column(String, nullable=True)
     created_at = Column(DateTime, default=func.now(), nullable=False)
     updated_at = Column(DateTime, default=func.now(),
                         onupdate=func.now(), nullable=False)
