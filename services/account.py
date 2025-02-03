@@ -1,3 +1,4 @@
+from datetime import datetime
 from models.account import Account
 from schemas.account import AccountSchema
 
@@ -24,6 +25,7 @@ class AccountService():
         if account:
             current_balance = account.current_balance
             account.current_balance = current_balance + amount
+            account.last_transaction_date = datetime.now()
             self.db.commit()
             return account
         return None
@@ -34,6 +36,7 @@ class AccountService():
         if account:
             current_balance = account.current_balance
             account.current_balance = current_balance - amount
+            account.last_transaction_date = datetime.now()
             print(account.current_balance)
             self.db.commit()
             return account

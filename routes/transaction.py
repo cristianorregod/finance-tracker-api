@@ -15,12 +15,14 @@ def get_transactions(filter: Optional[str] = Query("all", enum=["this_month", "t
     db = Session()
     data = TransactionService(db).read_transactions(filter)
     db.close()
-    return JSONResponse(content=jsonable_encoder(data), status_code=200)
+    transactions = [transaction.to_dict() for transaction in data]
+    return JSONResponse(content=jsonable_encoder(transactions), status_code=200)
 
 
 @transaction_router.post("/", tags=["transactions"], status_code=201, response_model=dict)
 def create_transaction(transaction: TransactionSchema) -> dict:
     db = Session()
-    TransactionService(db).create_transaction(transaction)
+    createdTransaction = TransactionService(
+        db).create_transaction(transaction).to_dict()
     db.close()
-    return JSONResponse(content={"message": "Transaction created successfully"}, status_code=201)
+    return JSONResponse(content={"message": "Transaction created successfully", "transaction": jsonable_encoder(createdTransaction)}, status_code=201)

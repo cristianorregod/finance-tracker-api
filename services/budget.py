@@ -1,3 +1,4 @@
+from datetime import datetime
 from models.budget import Budget
 from schemas.budget import BudgetSchema
 
@@ -22,8 +23,9 @@ class BudgetService():
         prev_budget = self.db.query(Budget).filter(Budget.id == id).first()
         if prev_budget:
             prev_budget.name = budget.name
+            prev_budget.description = budget.description
             prev_budget.amount = budget.amount
-            prev_budget.category_id = budget.category_id
+            prev_budget.icon = budget.icon
             self.db.commit()
             return prev_budget
         return None
@@ -33,6 +35,7 @@ class BudgetService():
         if prev_budget:
             prev_budget.remaining_amount = prev_budget.remaining_amount - amount
             prev_budget.spent_amount = prev_budget.spent_amount + amount
+            prev_budget.last_transaction_date = datetime.now()
             self.db.commit()
             return prev_budget
         return None

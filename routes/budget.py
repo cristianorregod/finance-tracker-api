@@ -22,6 +22,6 @@ def get_accounts() -> List[Budget]:
 @budget_router.post("/", tags=["budgets"], response_model=BudgetSchema)
 def create_budget(budget: BudgetSchema) -> dict:
     db = Session()
-    new_budget = BudgetService(db).create_budget(budget)
+    new_budget = BudgetService(db).create_budget(budget).to_dict()
     db.close()
-    return JSONResponse(content={"message": "Budget created successfully"}, status_code=201)
+    return JSONResponse(content={"message": "Budget created successfully", "budget": jsonable_encoder(new_budget)}, status_code=201)

@@ -1,9 +1,11 @@
 from datetime import datetime, timedelta
 from sqlalchemy import func
+from sqlalchemy.orm import joinedload
 from models.transaction import Transaction
 from schemas.transaction import TransactionSchema
 from services.account import AccountService
 from services.budget import BudgetService
+from utils.constants import TRANSACTION_TYPES
 
 
 class TransactionService():
@@ -13,7 +15,12 @@ class TransactionService():
         self.db = db
 
     def read_transactions(self, filter: str):
-        query = self.db.query(Transaction)
+        query = self.db.query(Transaction).options(
+            joinedload(Transaction.from_account),
+            joinedload(Transaction.to_account),
+            joinedload(Transaction.budget),
+            joinedload(Transaction.category),
+        )
 
         # Filter by the current month
         if filter == 'this_month':
@@ -35,12 +42,14 @@ class TransactionService():
             query = query.filter(Transaction.transaction_date >= start_of_week)
             print("query", query)
 
+        query = query.order_by(Transaction.transaction_date.desc())
         result = result = query.all()
         return result
 
     def create_transaction(self, transaction: TransactionSchema):
         new_transaction = Transaction(**transaction.dict())
-        if new_transaction.type == 'Income':
+        print("new_transaction", new_transaction)
+        if new_transaction.type == TRANSACTION_TYPES.INCOME:
             account_id = new_transaction.to_account_id
             print('Consultar to_account_id para actualizar saldo')
             add_balance = AccountService(self.db).add_balance(
@@ -58,6 +67,9 @@ class TransactionService():
             subtract_balance = AccountService(self.db).subtract_balance(
                 account_id, new_transaction.amount)
             print("Subtract balance", subtract_balance)
+            if new_transaction.to_account:
+                add_balance = AccountService(self.db).add_balance(
+                    new_transaction.to_account_id, new_transaction.amount)
         print(new_transaction.amount)
         self.db.add(new_transaction)
         self.db.commit()

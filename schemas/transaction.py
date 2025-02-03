@@ -17,7 +17,9 @@ class TransactionSchema(BaseModel):
     type: str = Field(min_length=3, max_length=25,
                       description="Describe the transaction type")
     description: str = Field(min_length=10, max_length=50,
-                             description="Short description or name of the transaction")
+                             description="Short description of the transaction")
+    title: str = Field(min_length=15, max_length=25,
+                       description="Name of the transaction")
     amount: float = Field(
         ge=0, description="The expense for the current transaction")
     icon: Optional[str] = Field(

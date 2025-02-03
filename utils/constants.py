@@ -1,0 +1,5 @@
+TRANSACTION_TYPES = {
+    'INCOME': 'INCOME',
+    'EXPENSE': 'EXPENSE',
+    'SAVINGS': 'SAVINGS',
+}

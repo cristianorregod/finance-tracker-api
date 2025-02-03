@@ -21,6 +21,7 @@ def get_accounts() -> List[Account]:
 @account_router.post("/", tags=["accounts"], status_code=201, response_model=dict)
 def create_account(account: AccountSchema) -> dict:
     db = Session()
-    AccountService(db).create_account(account)
+    creatdAccount = AccountService(db).create_account(account).to_dict()
+
     db.close()
-    return JSONResponse(content={"message": "Account created successfully"}, status_code=201)
+    return JSONResponse(content={"message": "Account created successfully", "account": jsonable_encoder(creatdAccount)}, status_code=201)
