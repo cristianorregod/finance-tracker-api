@@ -1,0 +1,1433 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "DeclarativeBase",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "joinedload",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Date",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm.session",
+        "description": "sqlalchemy.orm.session",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm.session",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "BaseHTTPMiddleware",
+        "importPath": "starlette.middleware.base",
+        "description": "starlette.middleware.base",
+        "isExtraImport": true,
+        "detail": "starlette.middleware.base",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Query",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "importPath": "config.database",
+        "description": "config.database",
+        "isExtraImport": true,
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Account",
+        "importPath": "models.account",
+        "description": "models.account",
+        "isExtraImport": true,
+        "detail": "models.account",
+        "documentation": {}
+    },
+    {
+        "label": "Account",
+        "importPath": "models.account",
+        "description": "models.account",
+        "isExtraImport": true,
+        "detail": "models.account",
+        "documentation": {}
+    },
+    {
+        "label": "Account",
+        "importPath": "models.account",
+        "description": "models.account",
+        "isExtraImport": true,
+        "detail": "models.account",
+        "documentation": {}
+    },
+    {
+        "label": "AccountSchema",
+        "importPath": "schemas.account",
+        "description": "schemas.account",
+        "isExtraImport": true,
+        "detail": "schemas.account",
+        "documentation": {}
+    },
+    {
+        "label": "AccountSchema",
+        "importPath": "schemas.account",
+        "description": "schemas.account",
+        "isExtraImport": true,
+        "detail": "schemas.account",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "AccountService",
+        "importPath": "services.account",
+        "description": "services.account",
+        "isExtraImport": true,
+        "detail": "services.account",
+        "documentation": {}
+    },
+    {
+        "label": "AccountService",
+        "importPath": "services.account",
+        "description": "services.account",
+        "isExtraImport": true,
+        "detail": "services.account",
+        "documentation": {}
+    },
+    {
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
+        "isExtraImport": true,
+        "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
+        "isExtraImport": true,
+        "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
+        "isExtraImport": true,
+        "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
+        "isExtraImport": true,
+        "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
+        "isExtraImport": true,
+        "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "Budget",
+        "importPath": "models.budget",
+        "description": "models.budget",
+        "isExtraImport": true,
+        "detail": "models.budget",
+        "documentation": {}
+    },
+    {
+        "label": "Budget",
+        "importPath": "models.budget",
+        "description": "models.budget",
+        "isExtraImport": true,
+        "detail": "models.budget",
+        "documentation": {}
+    },
+    {
+        "label": "Budget",
+        "importPath": "models.budget",
+        "description": "models.budget",
+        "isExtraImport": true,
+        "detail": "models.budget",
+        "documentation": {}
+    },
+    {
+        "label": "BudgetSchema",
+        "importPath": "schemas.budget",
+        "description": "schemas.budget",
+        "isExtraImport": true,
+        "detail": "schemas.budget",
+        "documentation": {}
+    },
+    {
+        "label": "BudgetSchema",
+        "importPath": "schemas.budget",
+        "description": "schemas.budget",
+        "isExtraImport": true,
+        "detail": "schemas.budget",
+        "documentation": {}
+    },
+    {
+        "label": "BudgetService",
+        "importPath": "services.budget",
+        "description": "services.budget",
+        "isExtraImport": true,
+        "detail": "services.budget",
+        "documentation": {}
+    },
+    {
+        "label": "BudgetService",
+        "importPath": "services.budget",
+        "description": "services.budget",
+        "isExtraImport": true,
+        "detail": "services.budget",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "models.category",
+        "description": "models.category",
+        "isExtraImport": true,
+        "detail": "models.category",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "models.category",
+        "description": "models.category",
+        "isExtraImport": true,
+        "detail": "models.category",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "models.category",
+        "description": "models.category",
+        "isExtraImport": true,
+        "detail": "models.category",
+        "documentation": {}
+    },
+    {
+        "label": "CategorySchema",
+        "importPath": "schemas.category",
+        "description": "schemas.category",
+        "isExtraImport": true,
+        "detail": "schemas.category",
+        "documentation": {}
+    },
+    {
+        "label": "CategorySchema",
+        "importPath": "schemas.category",
+        "description": "schemas.category",
+        "isExtraImport": true,
+        "detail": "schemas.category",
+        "documentation": {}
+    },
+    {
+        "label": "CategoryService",
+        "importPath": "services.category",
+        "description": "services.category",
+        "isExtraImport": true,
+        "detail": "services.category",
+        "documentation": {}
+    },
+    {
+        "label": "ParametersService",
+        "importPath": "services.parameters",
+        "description": "services.parameters",
+        "isExtraImport": true,
+        "detail": "services.parameters",
+        "documentation": {}
+    },
+    {
+        "label": "Transaction",
+        "importPath": "models.transaction",
+        "description": "models.transaction",
+        "isExtraImport": true,
+        "detail": "models.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "Transaction",
+        "importPath": "models.transaction",
+        "description": "models.transaction",
+        "isExtraImport": true,
+        "detail": "models.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "Transaction",
+        "importPath": "models.transaction",
+        "description": "models.transaction",
+        "isExtraImport": true,
+        "detail": "models.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionSchema",
+        "importPath": "schemas.transaction",
+        "description": "schemas.transaction",
+        "isExtraImport": true,
+        "detail": "schemas.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionSchema",
+        "importPath": "schemas.transaction",
+        "description": "schemas.transaction",
+        "isExtraImport": true,
+        "detail": "schemas.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionService",
+        "importPath": "services.transaction",
+        "description": "services.transaction",
+        "isExtraImport": true,
+        "detail": "services.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "TRANSACTION_TYPES",
+        "importPath": "utils.constants",
+        "description": "utils.constants",
+        "isExtraImport": true,
+        "detail": "utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "account_router",
+        "importPath": "routes.account",
+        "description": "routes.account",
+        "isExtraImport": true,
+        "detail": "routes.account",
+        "documentation": {}
+    },
+    {
+        "label": "budget_router",
+        "importPath": "routes.budget",
+        "description": "routes.budget",
+        "isExtraImport": true,
+        "detail": "routes.budget",
+        "documentation": {}
+    },
+    {
+        "label": "transaction_router",
+        "importPath": "routes.transaction",
+        "description": "routes.transaction",
+        "isExtraImport": true,
+        "detail": "routes.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "category_router",
+        "importPath": "routes.category",
+        "description": "routes.category",
+        "isExtraImport": true,
+        "detail": "routes.category",
+        "documentation": {}
+    },
+    {
+        "label": "parameter_router",
+        "importPath": "routes.parameters",
+        "description": "routes.parameters",
+        "isExtraImport": true,
+        "detail": "routes.parameters",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorHandler",
+        "importPath": "middlewares.error_handler",
+        "description": "middlewares.error_handler",
+        "isExtraImport": true,
+        "detail": "middlewares.error_handler",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 6,
+        "importPath": "config.database",
+        "description": "config.database",
+        "peekOfCode": "class Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite_file_name",
+        "kind": 5,
+        "importPath": "config.database",
+        "description": "config.database",
+        "peekOfCode": "sqlite_file_name = \"../database.sqlite\"\nbase_dir = os.path.dirname(os.path.realpath(__file__))\ndatabase_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\nengine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "base_dir",
+        "kind": 5,
+        "importPath": "config.database",
+        "description": "config.database",
+        "peekOfCode": "base_dir = os.path.dirname(os.path.realpath(__file__))\ndatabase_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\nengine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "database_url",
+        "kind": 5,
+        "importPath": "config.database",
+        "description": "config.database",
+        "peekOfCode": "database_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\nengine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "config.database",
+        "description": "config.database",
+        "peekOfCode": "engine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "kind": 5,
+        "importPath": "config.database",
+        "description": "config.database",
+        "peekOfCode": "Session = sessionmaker(bind=engine)",
+        "detail": "config.database",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorHandler",
+        "kind": 6,
+        "importPath": "middlewares.error_handler",
+        "description": "middlewares.error_handler",
+        "peekOfCode": "class ErrorHandler(BaseHTTPMiddleware):\n    def __init__(self, app: FastAPI) -> None:\n        super().__init__(app)\n    async def dispatch(self, request: Request, call_next) -> Response | JSONResponse:\n        try:\n            return await call_next(request)\n        except Exception as e:\n            return JSONResponse(status_code=500, content={\"error\": str(e)})",
+        "detail": "middlewares.error_handler",
+        "documentation": {}
+    },
+    {
+        "label": "Account",
+        "kind": 6,
+        "importPath": "models.account",
+        "description": "models.account",
+        "peekOfCode": "class Account(Base):\n    __tablename__ = 'accounts'\n    def to_dict(self):\n        return {column.name: getattr(self, column.name) for column in self.__table__.columns}\n    id = Column(Integer, primary_key=True, index=True)\n    name = Column(String, nullable=False)\n    initial_balance = Column(Float, nullable=False,  default=0)\n    current_balance = Column(Float, nullable=True, default=0)\n    account_type = Column(String, nullable=False)\n    icon = Column(String, nullable=True)",
+        "detail": "models.account",
+        "documentation": {}
+    },
+    {
+        "label": "Budget",
+        "kind": 6,
+        "importPath": "models.budget",
+        "description": "models.budget",
+        "peekOfCode": "class Budget(Base):\n    __tablename__ = 'budgets'\n    def to_dict(self):\n        return {column.name: getattr(self, column.name) for column in self.__table__.columns}\n    id = Column(Integer, primary_key=True, index=True)\n    name = Column(String, nullable=False)\n    description = Column(String, nullable=True)\n    amount = Column(Float, nullable=False)\n    remaining_amount = Column(Float, nullable=False)\n    spent_amount = Column(Float, nullable=True, default=0)",
+        "detail": "models.budget",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "kind": 6,
+        "importPath": "models.category",
+        "description": "models.category",
+        "peekOfCode": "class Category(Base):\n    __tablename__ = \"categories\"\n    def to_dict(self):\n        return {column.name: getattr(self, column.name) for column in self.__table__.columns}\n    id = Column(Integer, primary_key=True, index=True)\n    name = Column(String, nullable=False)\n    description = Column(String, nullable=True)\n    icon = Column(String, nullable=True)\n    transactions = relationship(\"Transaction\", back_populates=\"category\")",
+        "detail": "models.category",
+        "documentation": {}
+    },
+    {
+        "label": "Transaction",
+        "kind": 6,
+        "importPath": "models.transaction",
+        "description": "models.transaction",
+        "peekOfCode": "class Transaction(Base):\n    __tablename__ = 'transactions'\n    def to_dict(self):\n        return {\n            \"id\": self.id,\n            \"from_account\": self.from_account.to_dict() if self.from_account else None,\n            \"to_account\": self.to_account.to_dict() if self.to_account else None,\n            \"budget\": self.budget.to_dict() if self.budget else None,\n            \"category\": self.category.to_dict() if self.category else None,\n            \"type\": self.type,",
+        "detail": "models.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "get_accounts",
+        "kind": 2,
+        "importPath": "routes.account",
+        "description": "routes.account",
+        "peekOfCode": "def get_accounts() -> List[Account]:\n    db = Session()\n    data = AccountService(db).read_accounts()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)\n@account_router.post(\"/\", tags=[\"accounts\"], status_code=201, response_model=dict)\ndef create_account(account: AccountSchema) -> dict:\n    db = Session()\n    creatdAccount = AccountService(db).create_account(account).to_dict()\n    db.close()",
+        "detail": "routes.account",
+        "documentation": {}
+    },
+    {
+        "label": "create_account",
+        "kind": 2,
+        "importPath": "routes.account",
+        "description": "routes.account",
+        "peekOfCode": "def create_account(account: AccountSchema) -> dict:\n    db = Session()\n    creatdAccount = AccountService(db).create_account(account).to_dict()\n    db.close()\n    return JSONResponse(content={\"message\": \"Account created successfully\", \"account\": jsonable_encoder(creatdAccount)}, status_code=201)",
+        "detail": "routes.account",
+        "documentation": {}
+    },
+    {
+        "label": "account_router",
+        "kind": 5,
+        "importPath": "routes.account",
+        "description": "routes.account",
+        "peekOfCode": "account_router = APIRouter(prefix=\"/accounts\", tags=[\"accounts\"])\n@account_router.get(\"/\", tags=[\"accounts\"], response_model=List[AccountSchema])\ndef get_accounts() -> List[Account]:\n    db = Session()\n    data = AccountService(db).read_accounts()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)\n@account_router.post(\"/\", tags=[\"accounts\"], status_code=201, response_model=dict)\ndef create_account(account: AccountSchema) -> dict:\n    db = Session()",
+        "detail": "routes.account",
+        "documentation": {}
+    },
+    {
+        "label": "get_accounts",
+        "kind": 2,
+        "importPath": "routes.budget",
+        "description": "routes.budget",
+        "peekOfCode": "def get_accounts() -> List[Budget]:\n    db = Session()\n    data = BudgetService(db).read_budgets()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)\n@budget_router.post(\"/\", tags=[\"budgets\"], response_model=BudgetSchema)\ndef create_budget(budget: BudgetSchema) -> dict:\n    db = Session()\n    new_budget = BudgetService(db).create_budget(budget).to_dict()\n    db.close()",
+        "detail": "routes.budget",
+        "documentation": {}
+    },
+    {
+        "label": "create_budget",
+        "kind": 2,
+        "importPath": "routes.budget",
+        "description": "routes.budget",
+        "peekOfCode": "def create_budget(budget: BudgetSchema) -> dict:\n    db = Session()\n    new_budget = BudgetService(db).create_budget(budget).to_dict()\n    db.close()\n    return JSONResponse(content={\"message\": \"Budget created successfully\", \"budget\": jsonable_encoder(new_budget)}, status_code=201)",
+        "detail": "routes.budget",
+        "documentation": {}
+    },
+    {
+        "label": "budget_router",
+        "kind": 5,
+        "importPath": "routes.budget",
+        "description": "routes.budget",
+        "peekOfCode": "budget_router = APIRouter(prefix=\"/budgets\", tags=[\"budgets\"])\n@budget_router.get(\"/\", tags=[\"budgets\"], response_model=List[BudgetSchema])\ndef get_accounts() -> List[Budget]:\n    db = Session()\n    data = BudgetService(db).read_budgets()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)\n@budget_router.post(\"/\", tags=[\"budgets\"], response_model=BudgetSchema)\ndef create_budget(budget: BudgetSchema) -> dict:\n    db = Session()",
+        "detail": "routes.budget",
+        "documentation": {}
+    },
+    {
+        "label": "get_categories",
+        "kind": 2,
+        "importPath": "routes.category",
+        "description": "routes.category",
+        "peekOfCode": "def get_categories() -> List[Category]:\n    db = Session()\n    data = CategoryService(db).get_categories()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)\n@category_router.post(\"/\", tags=[\"categories\"], response_model=CategorySchema)\ndef create_category(category: CategorySchema) -> dict:\n    db = Session()\n    CategoryService(db).create_category(category)\n    db.close()",
+        "detail": "routes.category",
+        "documentation": {}
+    },
+    {
+        "label": "create_category",
+        "kind": 2,
+        "importPath": "routes.category",
+        "description": "routes.category",
+        "peekOfCode": "def create_category(category: CategorySchema) -> dict:\n    db = Session()\n    CategoryService(db).create_category(category)\n    db.close()\n    return JSONResponse(content={\"message\": \"Category created successfully\"}, status_code=201)",
+        "detail": "routes.category",
+        "documentation": {}
+    },
+    {
+        "label": "category_router",
+        "kind": 5,
+        "importPath": "routes.category",
+        "description": "routes.category",
+        "peekOfCode": "category_router = APIRouter(prefix=\"/categories\", tags=[\"categories\"])\n@category_router.get(\"/\", tags=[\"categories\"], response_model=List[CategorySchema])\ndef get_categories() -> List[Category]:\n    db = Session()\n    data = CategoryService(db).get_categories()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)\n@category_router.post(\"/\", tags=[\"categories\"], response_model=CategorySchema)\ndef create_category(category: CategorySchema) -> dict:\n    db = Session()",
+        "detail": "routes.category",
+        "documentation": {}
+    },
+    {
+        "label": "get_initial_data",
+        "kind": 2,
+        "importPath": "routes.parameters",
+        "description": "routes.parameters",
+        "peekOfCode": "def get_initial_data() -> List[dict]:\n    db = Session()\n    data = ParametersService(db).get_initial_data()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)",
+        "detail": "routes.parameters",
+        "documentation": {}
+    },
+    {
+        "label": "parameter_router",
+        "kind": 5,
+        "importPath": "routes.parameters",
+        "description": "routes.parameters",
+        "peekOfCode": "parameter_router = APIRouter(prefix=\"/parameters\", tags=[\"parameters\"])\n@parameter_router.get(\"/\", tags=[\"parameters\"], response_model=List[dict])\ndef get_initial_data() -> List[dict]:\n    db = Session()\n    data = ParametersService(db).get_initial_data()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)",
+        "detail": "routes.parameters",
+        "documentation": {}
+    },
+    {
+        "label": "get_transactions",
+        "kind": 2,
+        "importPath": "routes.transaction",
+        "description": "routes.transaction",
+        "peekOfCode": "def get_transactions(filter: Optional[str] = Query(\"all\", enum=[\"this_month\", \"this_week\", \"all\"])) -> List[Transaction]:\n    db = Session()\n    data = TransactionService(db).read_transactions(filter)\n    db.close()\n    transactions = [transaction.to_dict() for transaction in data]\n    return JSONResponse(content=jsonable_encoder(transactions), status_code=200)\n@transaction_router.post(\"/\", tags=[\"transactions\"], status_code=201, response_model=dict)\ndef create_transaction(transaction: TransactionSchema) -> dict:\n    db = Session()\n    createdTransaction = TransactionService(",
+        "detail": "routes.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "create_transaction",
+        "kind": 2,
+        "importPath": "routes.transaction",
+        "description": "routes.transaction",
+        "peekOfCode": "def create_transaction(transaction: TransactionSchema) -> dict:\n    db = Session()\n    createdTransaction = TransactionService(\n        db).create_transaction(transaction).to_dict()\n    db.close()\n    return JSONResponse(content={\"message\": \"Transaction created successfully\", \"transaction\": jsonable_encoder(createdTransaction)}, status_code=201)",
+        "detail": "routes.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "transaction_router",
+        "kind": 5,
+        "importPath": "routes.transaction",
+        "description": "routes.transaction",
+        "peekOfCode": "transaction_router = APIRouter(prefix=\"/transactions\", tags=[\"transactions\"])\n@transaction_router.get(\"/\", tags=[\"transactions\"], response_model=List[TransactionSchema])\ndef get_transactions(filter: Optional[str] = Query(\"all\", enum=[\"this_month\", \"this_week\", \"all\"])) -> List[Transaction]:\n    db = Session()\n    data = TransactionService(db).read_transactions(filter)\n    db.close()\n    transactions = [transaction.to_dict() for transaction in data]\n    return JSONResponse(content=jsonable_encoder(transactions), status_code=200)\n@transaction_router.post(\"/\", tags=[\"transactions\"], status_code=201, response_model=dict)\ndef create_transaction(transaction: TransactionSchema) -> dict:",
+        "detail": "routes.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "AccountSchema",
+        "kind": 6,
+        "importPath": "schemas.account",
+        "description": "schemas.account",
+        "peekOfCode": "class AccountSchema(BaseModel):\n    id: Optional[int] = Field(\n        None, description=\"The unique identifier of the account\")\n    name: str = Field(min_length=3, max_length=25,\n                      description=\"The name of the account\")\n    initial_balance: float = Field(\n        ge=0, description=\"The initial balance of the account\")\n    current_balance: Optional[float] = Field(\n        ge=0, description=\"The current balance of the account\")\n    account_type: str = Field(min_length=5, max_length=20,",
+        "detail": "schemas.account",
+        "documentation": {}
+    },
+    {
+        "label": "BudgetSchema",
+        "kind": 6,
+        "importPath": "schemas.budget",
+        "description": "schemas.budget",
+        "peekOfCode": "class BudgetSchema(BaseModel):\n    id: Optional[int] = Field(\n        None, description=\"The unique identifier of the budget\")\n    name: str = Field(min_length=3, max_length=25,\n                      description=\"The name of the budget\")\n    description: Optional[str] = Field(None,\n                                       description=\"The description of the budget\")\n    amount: float = Field(ge=0, description=\"The amount of the budget\")\n    remaining_amount: float = Field(\n        description=\"The remaining amount of the budget\")",
+        "detail": "schemas.budget",
+        "documentation": {}
+    },
+    {
+        "label": "CategorySchema",
+        "kind": 6,
+        "importPath": "schemas.category",
+        "description": "schemas.category",
+        "peekOfCode": "class CategorySchema(BaseModel):\n    id: Optional[int] = Field(\n        None, description=\"The unique identifier of the category\")\n    name: str = Field(min_length=3, max_length=25,\n                      description=\"The name of the category\")\n    description: Optional[str] = Field(\n        None, description=\"The description of the category\")\n    icon: Optional[str] = Field(\n        None, description=\"The icon of the category\")\n    class Config:",
+        "detail": "schemas.category",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionSchema",
+        "kind": 6,
+        "importPath": "schemas.transaction",
+        "description": "schemas.transaction",
+        "peekOfCode": "class TransactionSchema(BaseModel):\n    id: Optional[int] = Field(\n        None, description=\"The unique identifier of the transaction\")\n    from_account_id: Optional[int] = Field(None,\n                                           description=\"Reference to account from money was spent\")\n    to_account_id: Optional[int] = Field(None,\n                                         description=\"Reference to account to money was received\")\n    budget_id: int = Field(None,\n                           description=\"Reference to budget for the transaction\")\n    category_id: Optional[int] = Field(",
+        "detail": "schemas.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "AccountService",
+        "kind": 6,
+        "importPath": "services.account",
+        "description": "services.account",
+        "peekOfCode": "class AccountService():\n    # Constructor -> gets DB connection\n    def __init__(self, db):\n        self.db = db\n    def read_accounts(self):\n        result = self.db.query(Account).all()\n        return result\n    def create_account(self, account: AccountSchema):\n        new_account = Account(**account.dict())\n        self.db.add(new_account)",
+        "detail": "services.account",
+        "documentation": {}
+    },
+    {
+        "label": "BudgetService",
+        "kind": 6,
+        "importPath": "services.budget",
+        "description": "services.budget",
+        "peekOfCode": "class BudgetService():\n    # Constructor -> gets DB connection\n    def __init__(self, db):\n        self.db = db\n    def read_budgets(self):\n        result = self.db.query(Budget).all()\n        return result\n    def create_budget(self, budget: BudgetSchema):\n        new_budget = Budget(**budget.dict())\n        self.db.add(new_budget)",
+        "detail": "services.budget",
+        "documentation": {}
+    },
+    {
+        "label": "CategoryService",
+        "kind": 6,
+        "importPath": "services.category",
+        "description": "services.category",
+        "peekOfCode": "class CategoryService():\n    def __init__(self, db) -> None:\n        self.db = db\n    def get_categories(self):\n        result = self.db.query(Category).all()\n        return result\n    def get_category(self, id):\n        result = self.db.query(Category).filter(Category.id == id).first()\n        return result\n    def create_category(self, category: Category):",
+        "detail": "services.category",
+        "documentation": {}
+    },
+    {
+        "label": "ParametersService",
+        "kind": 6,
+        "importPath": "services.parameters",
+        "description": "services.parameters",
+        "peekOfCode": "class ParametersService():\n    def __init__(self, db):\n        self.db = db\n    def get_initial_data(self):\n        accounts = self.db.query(Account).all()\n        budgets = self.db.query(Budget).all()\n        transactions = self.db.query(Transaction).order_by(\n            Transaction.transaction_date.desc()).all()\n        categories = self.db.query(Category).all()\n        transactions = [transaction.to_dict() for transaction in transactions]",
+        "detail": "services.parameters",
+        "documentation": {}
+    },
+    {
+        "label": "TransactionService",
+        "kind": 6,
+        "importPath": "services.transaction",
+        "description": "services.transaction",
+        "peekOfCode": "class TransactionService():\n    # Constructor -> gets DB connection\n    def __init__(self, db):\n        self.db = db\n    def read_transactions(self, filter: str):\n        query = self.db.query(Transaction).options(\n            joinedload(Transaction.from_account),\n            joinedload(Transaction.to_account),\n            joinedload(Transaction.budget),\n            joinedload(Transaction.category),",
+        "detail": "services.transaction",
+        "documentation": {}
+    },
+    {
+        "label": "TRANSACTION_TYPES",
+        "kind": 5,
+        "importPath": "utils.constants",
+        "description": "utils.constants",
+        "peekOfCode": "TRANSACTION_TYPES = {\n    'INCOME': 'INCOME',\n    'EXPENSE': 'EXPENSE',\n    'SAVINGS': 'SAVINGS',\n}",
+        "detail": "utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI()\napp.title = \"Finance Tracker API\"\napp.version = \"0.0.1\"\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # Permitir todos los orígenes\n    allow_credentials=True,  # Permitir envío de credenciales como cookies o headers auth\n    allow_methods=[\"*\"],  # Permitir todos los métodos HTTP\n    allow_headers=[\"*\"],  # Permitir todos los encabezados\n)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app.title",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app.title = \"Finance Tracker API\"\napp.version = \"0.0.1\"\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # Permitir todos los orígenes\n    allow_credentials=True,  # Permitir envío de credenciales como cookies o headers auth\n    allow_methods=[\"*\"],  # Permitir todos los métodos HTTP\n    allow_headers=[\"*\"],  # Permitir todos los encabezados\n)\napp.add_middleware(ErrorHandler)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app.version",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app.version = \"0.0.1\"\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # Permitir todos los orígenes\n    allow_credentials=True,  # Permitir envío de credenciales como cookies o headers auth\n    allow_methods=[\"*\"],  # Permitir todos los métodos HTTP\n    allow_headers=[\"*\"],  # Permitir todos los encabezados\n)\napp.add_middleware(ErrorHandler)\napp.include_router(account_router)",
+        "detail": "main",
+        "documentation": {}
+    }
+]
