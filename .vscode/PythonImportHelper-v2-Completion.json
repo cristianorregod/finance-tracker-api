@@ -1210,29 +1210,29 @@
         "documentation": {}
     },
     {
-        "label": "sqlite_file_name",
+        "label": "TURSO_DATABASE_URL",
         "kind": 5,
         "importPath": "config.database",
         "description": "config.database",
-        "peekOfCode": "sqlite_file_name = \"../database.sqlite\"\nbase_dir = os.path.dirname(os.path.realpath(__file__))\ndatabase_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\nengine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "peekOfCode": "TURSO_DATABASE_URL = os.getenv(\"TURSO_DATABASE_URL\")\nTURSO_AUTH_TOKEN = os.getenv(\"TURSO_AUTH_TOKEN\")\ndb_url = f\"sqlite+{TURSO_DATABASE_URL}/?authToken={TURSO_AUTH_TOKEN}&secure=true\"\nengine = create_engine(db_url, connect_args={\n                       'check_same_thread': False}, echo=True)\n# Local DB config\n# sqlite_file_name = \"../database.sqlite\"\n# base_dir = os.path.dirname(os.path.realpath(__file__))\n# database_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\n# engine = create_engine(database_url, echo=True)",
         "detail": "config.database",
         "documentation": {}
     },
     {
-        "label": "base_dir",
+        "label": "TURSO_AUTH_TOKEN",
         "kind": 5,
         "importPath": "config.database",
         "description": "config.database",
-        "peekOfCode": "base_dir = os.path.dirname(os.path.realpath(__file__))\ndatabase_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\nengine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "peekOfCode": "TURSO_AUTH_TOKEN = os.getenv(\"TURSO_AUTH_TOKEN\")\ndb_url = f\"sqlite+{TURSO_DATABASE_URL}/?authToken={TURSO_AUTH_TOKEN}&secure=true\"\nengine = create_engine(db_url, connect_args={\n                       'check_same_thread': False}, echo=True)\n# Local DB config\n# sqlite_file_name = \"../database.sqlite\"\n# base_dir = os.path.dirname(os.path.realpath(__file__))\n# database_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\n# engine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):",
         "detail": "config.database",
         "documentation": {}
     },
     {
-        "label": "database_url",
+        "label": "db_url",
         "kind": 5,
         "importPath": "config.database",
         "description": "config.database",
-        "peekOfCode": "database_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\nengine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "peekOfCode": "db_url = f\"sqlite+{TURSO_DATABASE_URL}/?authToken={TURSO_AUTH_TOKEN}&secure=true\"\nengine = create_engine(db_url, connect_args={\n                       'check_same_thread': False}, echo=True)\n# Local DB config\n# sqlite_file_name = \"../database.sqlite\"\n# base_dir = os.path.dirname(os.path.realpath(__file__))\n# database_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\n# engine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass",
         "detail": "config.database",
         "documentation": {}
     },
@@ -1241,7 +1241,7 @@
         "kind": 5,
         "importPath": "config.database",
         "description": "config.database",
-        "peekOfCode": "engine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
+        "peekOfCode": "engine = create_engine(db_url, connect_args={\n                       'check_same_thread': False}, echo=True)\n# Local DB config\n# sqlite_file_name = \"../database.sqlite\"\n# base_dir = os.path.dirname(os.path.realpath(__file__))\n# database_url = f\"sqlite:///{os.path.join(base_dir, sqlite_file_name)}\"\n# engine = create_engine(database_url, echo=True)\nclass Base(DeclarativeBase):\n    pass\nSession = sessionmaker(bind=engine)",
         "detail": "config.database",
         "documentation": {}
     },
