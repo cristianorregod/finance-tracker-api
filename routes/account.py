@@ -6,11 +6,12 @@ from config.database import Session
 from services.account import AccountService
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
+from middlewares.jwt_bearer import JWTBearer
 
 account_router = APIRouter(prefix="/accounts", tags=["accounts"])
 
 
-@account_router.get("/", tags=["accounts"], response_model=List[AccountSchema])
+@account_router.get("/", tags=["accounts"], response_model=List[AccountSchema], dependencies=[Depends(JWTBearer())])
 def get_accounts() -> List[Account]:
     db = Session()
     data = AccountService(db).read_accounts()

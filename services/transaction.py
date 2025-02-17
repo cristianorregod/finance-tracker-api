@@ -49,7 +49,7 @@ class TransactionService():
     def create_transaction(self, transaction: TransactionSchema):
         new_transaction = Transaction(**transaction.dict())
         print("new_transaction", new_transaction)
-        if new_transaction.type == TRANSACTION_TYPES.INCOME:
+        if new_transaction.type == TRANSACTION_TYPES['INCOME']:
             account_id = new_transaction.to_account_id
             print('Consultar to_account_id para actualizar saldo')
             add_balance = AccountService(self.db).add_balance(
@@ -67,10 +67,25 @@ class TransactionService():
             subtract_balance = AccountService(self.db).subtract_balance(
                 account_id, new_transaction.amount)
             print("Subtract balance", subtract_balance)
-            if new_transaction.to_account:
+            if new_transaction.to_account_id != None:
+                account_id = new_transaction.to_account_id
                 add_balance = AccountService(self.db).add_balance(
-                    new_transaction.to_account_id, new_transaction.amount)
+                    account_id, new_transaction.amount)
         print(new_transaction.amount)
         self.db.add(new_transaction)
         self.db.commit()
         return new_transaction
+
+    def edit_transaction(self, transaction_id: int, transaction: TransactionSchema):
+        transaction_to_edit = self.db.query(Transaction).filter(
+            Transaction.id == transaction_id).first()
+        if transaction_to_edit:
+            transaction_to_edit.type = transaction.type
+            transaction_to_edit.description = transaction.description
+            transaction_to_edit.title = transaction.title
+            transaction_to_edit.amount = transaction.amount
+            transaction_to_edit.transaction_date = transaction.transaction_date
+            transaction_to_edit.icon = transaction.icon
+            self.db.commit()
+            return transaction_to_edit
+        return None

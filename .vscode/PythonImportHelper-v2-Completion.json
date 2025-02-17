@@ -313,6 +313,22 @@
         "documentation": {}
     },
     {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -338,6 +354,14 @@
     },
     {
         "label": "Query",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
@@ -465,11 +489,35 @@
         "documentation": {}
     },
     {
-        "label": "Base",
-        "importPath": "config.database",
-        "description": "config.database",
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
         "isExtraImport": true,
-        "detail": "config.database",
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "validate_token",
+        "importPath": "utils.jwt_manager",
+        "description": "utils.jwt_manager",
+        "isExtraImport": true,
+        "detail": "utils.jwt_manager",
+        "documentation": {}
+    },
+    {
+        "label": "create_token",
+        "importPath": "utils.jwt_manager",
+        "description": "utils.jwt_manager",
+        "isExtraImport": true,
+        "detail": "utils.jwt_manager",
         "documentation": {}
     },
     {
@@ -497,7 +545,7 @@
         "documentation": {}
     },
     {
-        "label": "Session",
+        "label": "Base",
         "importPath": "config.database",
         "description": "config.database",
         "isExtraImport": true,
@@ -734,6 +782,22 @@
         "description": "fastapi.encoders",
         "isExtraImport": true,
         "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "JWTBearer",
+        "importPath": "middlewares.jwt_bearer",
+        "description": "middlewares.jwt_bearer",
+        "isExtraImport": true,
+        "detail": "middlewares.jwt_bearer",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "schemas.user",
+        "description": "schemas.user",
+        "isExtraImport": true,
+        "detail": "schemas.user",
         "documentation": {}
     },
     {
@@ -961,6 +1025,14 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "date",
         "importPath": "datetime",
         "description": "datetime",
@@ -1025,11 +1097,51 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "TRANSACTION_TYPES",
         "importPath": "utils.constants",
         "description": "utils.constants",
         "isExtraImport": true,
         "detail": "utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "encode",
+        "importPath": "jwt",
+        "description": "jwt",
+        "isExtraImport": true,
+        "detail": "jwt",
+        "documentation": {}
+    },
+    {
+        "label": "decode",
+        "importPath": "jwt",
+        "description": "jwt",
+        "isExtraImport": true,
+        "detail": "jwt",
+        "documentation": {}
+    },
+    {
+        "label": "auth_router",
+        "importPath": "routes.auth",
+        "description": "routes.auth",
+        "isExtraImport": true,
+        "detail": "routes.auth",
         "documentation": {}
     },
     {
@@ -1152,6 +1264,15 @@
         "documentation": {}
     },
     {
+        "label": "JWTBearer",
+        "kind": 6,
+        "importPath": "middlewares.jwt_bearer",
+        "description": "middlewares.jwt_bearer",
+        "peekOfCode": "class JWTBearer(HTTPBearer):\n    async def __call__(self, request: Request):\n        auth = await super().__call__(request)\n        is_valid = validate_token(auth.credentials)\n        if not is_valid:\n            raise HTTPException(status_code=403, detail=\"Invalid token\")",
+        "detail": "middlewares.jwt_bearer",
+        "documentation": {}
+    },
+    {
         "label": "Account",
         "kind": 6,
         "importPath": "models.account",
@@ -1210,8 +1331,26 @@
         "kind": 5,
         "importPath": "routes.account",
         "description": "routes.account",
-        "peekOfCode": "account_router = APIRouter(prefix=\"/accounts\", tags=[\"accounts\"])\n@account_router.get(\"/\", tags=[\"accounts\"], response_model=List[AccountSchema])\ndef get_accounts() -> List[Account]:\n    db = Session()\n    data = AccountService(db).read_accounts()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)\n@account_router.post(\"/\", tags=[\"accounts\"], status_code=201, response_model=dict)\ndef create_account(account: AccountSchema) -> dict:\n    db = Session()",
+        "peekOfCode": "account_router = APIRouter(prefix=\"/accounts\", tags=[\"accounts\"])\n@account_router.get(\"/\", tags=[\"accounts\"], response_model=List[AccountSchema], dependencies=[Depends(JWTBearer())])\ndef get_accounts() -> List[Account]:\n    db = Session()\n    data = AccountService(db).read_accounts()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)\n@account_router.post(\"/\", tags=[\"accounts\"], status_code=201, response_model=dict)\ndef create_account(account: AccountSchema) -> dict:\n    db = Session()",
         "detail": "routes.account",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "routes.auth",
+        "description": "routes.auth",
+        "peekOfCode": "def login(user: User):\n    if user.email == \"cristian.duquew@gmail.com\" and user.password == \"NeverSettl3\":\n        token: str = create_token(user.dict())\n        return JSONResponse(content={\"token\": token}, status_code=200)\n    return JSONResponse(content={\"message\": \"Invalid credentials\"}, status_code=401)",
+        "detail": "routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "auth_router",
+        "kind": 5,
+        "importPath": "routes.auth",
+        "description": "routes.auth",
+        "peekOfCode": "auth_router = APIRouter(prefix=\"/auth\", tags=[\"auth\"])\n@auth_router.post('/login', tags=[\"auth\"])\ndef login(user: User):\n    if user.email == \"cristian.duquew@gmail.com\" and user.password == \"NeverSettl3\":\n        token: str = create_token(user.dict())\n        return JSONResponse(content={\"token\": token}, status_code=200)\n    return JSONResponse(content={\"message\": \"Invalid credentials\"}, status_code=401)",
+        "detail": "routes.auth",
         "documentation": {}
     },
     {
@@ -1350,6 +1489,15 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "kind": 6,
+        "importPath": "schemas.user",
+        "description": "schemas.user",
+        "peekOfCode": "class User(BaseModel):\n    email: str\n    password: str",
+        "detail": "schemas.user",
+        "documentation": {}
+    },
+    {
         "label": "AccountService",
         "kind": 6,
         "importPath": "services.account",
@@ -1404,6 +1552,42 @@
         "documentation": {}
     },
     {
+        "label": "create_token",
+        "kind": 2,
+        "importPath": "utils.jwt_manager",
+        "description": "utils.jwt_manager",
+        "peekOfCode": "def create_token(data: dict):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    token: str = encode(payload=to_encode,\n                        key=JWT_SECRET_KEY, algorithm=\"HS256\")\n    return token\ndef validate_token(token: str):\n    data: dict = decode(token, key=JWT_SECRET_KEY, algorithms=[\"HS256\"])\n    return data",
+        "detail": "utils.jwt_manager",
+        "documentation": {}
+    },
+    {
+        "label": "validate_token",
+        "kind": 2,
+        "importPath": "utils.jwt_manager",
+        "description": "utils.jwt_manager",
+        "peekOfCode": "def validate_token(token: str):\n    data: dict = decode(token, key=JWT_SECRET_KEY, algorithms=[\"HS256\"])\n    return data",
+        "detail": "utils.jwt_manager",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_SECRET_KEY",
+        "kind": 5,
+        "importPath": "utils.jwt_manager",
+        "description": "utils.jwt_manager",
+        "peekOfCode": "JWT_SECRET_KEY = os.getenv(\"JWT_SECRET_KEY\")\nACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv(\"ACCESS_TOKEN_EXPIRE_MINUTES\", 60))\ndef create_token(data: dict):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    token: str = encode(payload=to_encode,\n                        key=JWT_SECRET_KEY, algorithm=\"HS256\")\n    return token\ndef validate_token(token: str):",
+        "detail": "utils.jwt_manager",
+        "documentation": {}
+    },
+    {
+        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
+        "kind": 5,
+        "importPath": "utils.jwt_manager",
+        "description": "utils.jwt_manager",
+        "peekOfCode": "ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv(\"ACCESS_TOKEN_EXPIRE_MINUTES\", 60))\ndef create_token(data: dict):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    token: str = encode(payload=to_encode,\n                        key=JWT_SECRET_KEY, algorithm=\"HS256\")\n    return token\ndef validate_token(token: str):\n    data: dict = decode(token, key=JWT_SECRET_KEY, algorithms=[\"HS256\"])",
+        "detail": "utils.jwt_manager",
+        "documentation": {}
+    },
+    {
         "label": "app",
         "kind": 5,
         "importPath": "main",
@@ -1426,7 +1610,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app.version = \"0.0.1\"\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # Permitir todos los orígenes\n    allow_credentials=True,  # Permitir envío de credenciales como cookies o headers auth\n    allow_methods=[\"*\"],  # Permitir todos los métodos HTTP\n    allow_headers=[\"*\"],  # Permitir todos los encabezados\n)\napp.add_middleware(ErrorHandler)\napp.include_router(account_router)",
+        "peekOfCode": "app.version = \"0.0.1\"\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],  # Permitir todos los orígenes\n    allow_credentials=True,  # Permitir envío de credenciales como cookies o headers auth\n    allow_methods=[\"*\"],  # Permitir todos los métodos HTTP\n    allow_headers=[\"*\"],  # Permitir todos los encabezados\n)\napp.add_middleware(ErrorHandler)\napp.include_router(auth_router)",
         "detail": "main",
         "documentation": {}
     }

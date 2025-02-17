@@ -16,8 +16,8 @@ class TransactionSchema(BaseModel):
         None, description="Reference to category for the transaction")
     type: str = Field(min_length=3, max_length=25,
                       description="Describe the transaction type")
-    description: str = Field(min_length=10, max_length=50,
-                             description="Short description of the transaction")
+    description: Optional[str] = Field(None,
+                                       description="Short description of the transaction")
     title: str = Field(min_length=15, max_length=25,
                        description="Name of the transaction")
     amount: float = Field(

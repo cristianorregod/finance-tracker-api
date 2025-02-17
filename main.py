@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from fastapi import FastAPI
-from config.database import Session, Base, engine
+from config.database import Base, engine
+from routes.auth import auth_router
 from routes.account import account_router
 from routes.budget import budget_router
 from routes.transaction import transaction_router
@@ -28,6 +29,7 @@ app.add_middleware(
 
 
 app.add_middleware(ErrorHandler)
+app.include_router(auth_router)
 app.include_router(account_router)
 app.include_router(budget_router)
 app.include_router(category_router)
