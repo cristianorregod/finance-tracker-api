@@ -6,11 +6,12 @@ from config.database import Session
 from services.transaction import TransactionService
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
+from middlewares.jwt_bearer import JWTBearer
 
 transaction_router = APIRouter(prefix="/transactions", tags=["transactions"])
 
 
-@transaction_router.get("/", tags=["transactions"], response_model=List[TransactionSchema])
+@transaction_router.get("/", tags=["transactions"], response_model=List[TransactionSchema], dependencies=[Depends(JWTBearer())])
 def get_transactions(filter: Optional[str] = Query("all", enum=["this_month", "this_week", "all"])) -> List[Transaction]:
     db = Session()
     data = TransactionService(db).read_transactions(filter)
@@ -19,7 +20,7 @@ def get_transactions(filter: Optional[str] = Query("all", enum=["this_month", "t
     return JSONResponse(content=jsonable_encoder(transactions), status_code=200)
 
 
-@transaction_router.post("/", tags=["transactions"], status_code=201, response_model=dict)
+@transaction_router.post("/", tags=["transactions"], status_code=201, response_model=dict, dependencies=[Depends(JWTBearer())])
 def create_transaction(transaction: TransactionSchema) -> dict:
     db = Session()
     createdTransaction = TransactionService(

@@ -393,6 +393,14 @@
         "documentation": {}
     },
     {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -782,6 +790,22 @@
         "description": "fastapi.encoders",
         "isExtraImport": true,
         "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "JWTBearer",
+        "importPath": "middlewares.jwt_bearer",
+        "description": "middlewares.jwt_bearer",
+        "isExtraImport": true,
+        "detail": "middlewares.jwt_bearer",
+        "documentation": {}
+    },
+    {
+        "label": "JWTBearer",
+        "importPath": "middlewares.jwt_bearer",
+        "description": "middlewares.jwt_bearer",
+        "isExtraImport": true,
+        "detail": "middlewares.jwt_bearer",
         "documentation": {}
     },
     {
@@ -1437,7 +1461,7 @@
         "kind": 5,
         "importPath": "routes.parameters",
         "description": "routes.parameters",
-        "peekOfCode": "parameter_router = APIRouter(prefix=\"/parameters\", tags=[\"parameters\"])\n@parameter_router.get(\"/\", tags=[\"parameters\"], response_model=List[dict])\ndef get_initial_data() -> List[dict]:\n    db = Session()\n    data = ParametersService(db).get_initial_data()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)",
+        "peekOfCode": "parameter_router = APIRouter(prefix=\"/parameters\", tags=[\"parameters\"])\n@parameter_router.get(\"/\", tags=[\"parameters\"], response_model=List[dict], dependencies=[Depends(JWTBearer())])\ndef get_initial_data() -> List[dict]:\n    db = Session()\n    data = ParametersService(db).get_initial_data()\n    db.close()\n    return JSONResponse(content=jsonable_encoder(data), status_code=200)",
         "detail": "routes.parameters",
         "documentation": {}
     },
@@ -1446,7 +1470,7 @@
         "kind": 2,
         "importPath": "routes.transaction",
         "description": "routes.transaction",
-        "peekOfCode": "def get_transactions(filter: Optional[str] = Query(\"all\", enum=[\"this_month\", \"this_week\", \"all\"])) -> List[Transaction]:\n    db = Session()\n    data = TransactionService(db).read_transactions(filter)\n    db.close()\n    transactions = [transaction.to_dict() for transaction in data]\n    return JSONResponse(content=jsonable_encoder(transactions), status_code=200)\n@transaction_router.post(\"/\", tags=[\"transactions\"], status_code=201, response_model=dict)\ndef create_transaction(transaction: TransactionSchema) -> dict:\n    db = Session()\n    createdTransaction = TransactionService(",
+        "peekOfCode": "def get_transactions(filter: Optional[str] = Query(\"all\", enum=[\"this_month\", \"this_week\", \"all\"])) -> List[Transaction]:\n    db = Session()\n    data = TransactionService(db).read_transactions(filter)\n    db.close()\n    transactions = [transaction.to_dict() for transaction in data]\n    return JSONResponse(content=jsonable_encoder(transactions), status_code=200)\n@transaction_router.post(\"/\", tags=[\"transactions\"], status_code=201, response_model=dict, dependencies=[Depends(JWTBearer())])\ndef create_transaction(transaction: TransactionSchema) -> dict:\n    db = Session()\n    createdTransaction = TransactionService(",
         "detail": "routes.transaction",
         "documentation": {}
     },
@@ -1464,7 +1488,7 @@
         "kind": 5,
         "importPath": "routes.transaction",
         "description": "routes.transaction",
-        "peekOfCode": "transaction_router = APIRouter(prefix=\"/transactions\", tags=[\"transactions\"])\n@transaction_router.get(\"/\", tags=[\"transactions\"], response_model=List[TransactionSchema])\ndef get_transactions(filter: Optional[str] = Query(\"all\", enum=[\"this_month\", \"this_week\", \"all\"])) -> List[Transaction]:\n    db = Session()\n    data = TransactionService(db).read_transactions(filter)\n    db.close()\n    transactions = [transaction.to_dict() for transaction in data]\n    return JSONResponse(content=jsonable_encoder(transactions), status_code=200)\n@transaction_router.post(\"/\", tags=[\"transactions\"], status_code=201, response_model=dict)\ndef create_transaction(transaction: TransactionSchema) -> dict:",
+        "peekOfCode": "transaction_router = APIRouter(prefix=\"/transactions\", tags=[\"transactions\"])\n@transaction_router.get(\"/\", tags=[\"transactions\"], response_model=List[TransactionSchema], dependencies=[Depends(JWTBearer())])\ndef get_transactions(filter: Optional[str] = Query(\"all\", enum=[\"this_month\", \"this_week\", \"all\"])) -> List[Transaction]:\n    db = Session()\n    data = TransactionService(db).read_transactions(filter)\n    db.close()\n    transactions = [transaction.to_dict() for transaction in data]\n    return JSONResponse(content=jsonable_encoder(transactions), status_code=200)\n@transaction_router.post(\"/\", tags=[\"transactions\"], status_code=201, response_model=dict, dependencies=[Depends(JWTBearer())])\ndef create_transaction(transaction: TransactionSchema) -> dict:",
         "detail": "routes.transaction",
         "documentation": {}
     },
