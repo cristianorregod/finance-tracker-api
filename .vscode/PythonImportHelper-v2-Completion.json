@@ -1137,6 +1137,22 @@
         "documentation": {}
     },
     {
+        "label": "ExpiredSignatureError",
+        "importPath": "jwt",
+        "description": "jwt",
+        "isExtraImport": true,
+        "detail": "jwt",
+        "documentation": {}
+    },
+    {
+        "label": "InvalidTokenError",
+        "importPath": "jwt",
+        "description": "jwt",
+        "isExtraImport": true,
+        "detail": "jwt",
+        "documentation": {}
+    },
+    {
         "label": "auth_router",
         "importPath": "routes.auth",
         "description": "routes.auth",
@@ -1268,7 +1284,7 @@
         "kind": 6,
         "importPath": "middlewares.jwt_bearer",
         "description": "middlewares.jwt_bearer",
-        "peekOfCode": "class JWTBearer(HTTPBearer):\n    async def __call__(self, request: Request):\n        auth = await super().__call__(request)\n        is_valid = validate_token(auth.credentials)\n        if not is_valid:\n            raise HTTPException(status_code=403, detail=\"Invalid token\")",
+        "peekOfCode": "class JWTBearer(HTTPBearer):\n    async def __call__(self, request: Request):\n        auth = await super().__call__(request)\n        print(\"credentials\", auth.credentials)\n        print(\"iniciando validacion de token\")\n        is_valid = validate_token(auth.credentials)\n        print(\"is_valid\", is_valid)\n        if is_valid.get('error'):\n            raise HTTPException(status_code=403, detail=is_valid['error'])",
         "detail": "middlewares.jwt_bearer",
         "documentation": {}
     },
@@ -1556,7 +1572,7 @@
         "kind": 2,
         "importPath": "utils.jwt_manager",
         "description": "utils.jwt_manager",
-        "peekOfCode": "def create_token(data: dict):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    token: str = encode(payload=to_encode,\n                        key=JWT_SECRET_KEY, algorithm=\"HS256\")\n    return token\ndef validate_token(token: str):\n    data: dict = decode(token, key=JWT_SECRET_KEY, algorithms=[\"HS256\"])\n    return data",
+        "peekOfCode": "def create_token(data: dict):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    token: str = encode(payload=to_encode,\n                        key=JWT_SECRET_KEY, algorithm=\"HS256\")\n    return token\ndef validate_token(token: str):\n    print(\"token recibido\")\n    try:",
         "detail": "utils.jwt_manager",
         "documentation": {}
     },
@@ -1565,7 +1581,7 @@
         "kind": 2,
         "importPath": "utils.jwt_manager",
         "description": "utils.jwt_manager",
-        "peekOfCode": "def validate_token(token: str):\n    data: dict = decode(token, key=JWT_SECRET_KEY, algorithms=[\"HS256\"])\n    return data",
+        "peekOfCode": "def validate_token(token: str):\n    print(\"token recibido\")\n    try:\n        data: dict = decode(token, key=JWT_SECRET_KEY, algorithms=[\"HS256\"])\n        print(\"data decodificada\", data)\n        return data\n    except ExpiredSignatureError:\n        print(\"token expirado\")\n        return {\"error\": \"token expired\"}\n    except InvalidTokenError:",
         "detail": "utils.jwt_manager",
         "documentation": {}
     },
@@ -1583,7 +1599,7 @@
         "kind": 5,
         "importPath": "utils.jwt_manager",
         "description": "utils.jwt_manager",
-        "peekOfCode": "ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv(\"ACCESS_TOKEN_EXPIRE_MINUTES\", 60))\ndef create_token(data: dict):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    token: str = encode(payload=to_encode,\n                        key=JWT_SECRET_KEY, algorithm=\"HS256\")\n    return token\ndef validate_token(token: str):\n    data: dict = decode(token, key=JWT_SECRET_KEY, algorithms=[\"HS256\"])",
+        "peekOfCode": "ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv(\"ACCESS_TOKEN_EXPIRE_MINUTES\", 60))\ndef create_token(data: dict):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    token: str = encode(payload=to_encode,\n                        key=JWT_SECRET_KEY, algorithm=\"HS256\")\n    return token\ndef validate_token(token: str):\n    print(\"token recibido\")",
         "detail": "utils.jwt_manager",
         "documentation": {}
     },
