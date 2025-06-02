@@ -8,6 +8,7 @@ class Account(Base):
 
     def to_dict(self):
         return {column.name: getattr(self, column.name) for column in self.__table__.columns}
+    
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)

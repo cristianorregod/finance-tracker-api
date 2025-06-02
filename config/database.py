@@ -13,9 +13,9 @@ TURSO_AUTH_TOKEN = os.getenv("TURSO_AUTH_TOKEN")
 db_url = f"sqlite+{TURSO_DATABASE_URL}/?authToken={TURSO_AUTH_TOKEN}&secure=true"
 
 engine = create_engine(db_url, connect_args={
-                       'check_same_thread': False}, echo=True)
+                      'check_same_thread': False}, echo=True)
 
-# Local DB config
+#Local DB config
 # sqlite_file_name = "../database.sqlite"
 # base_dir = os.path.dirname(os.path.realpath(__file__))
 # database_url = f"sqlite:///{os.path.join(base_dir, sqlite_file_name)}"
