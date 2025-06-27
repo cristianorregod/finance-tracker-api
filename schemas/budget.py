@@ -21,4 +21,4 @@ class BudgetSchema(BaseModel):
         None, description="The last transaction date of the budget")
 
     class Config:
-        orm_mode = True
+        from_attributes = True

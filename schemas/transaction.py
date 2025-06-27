@@ -28,4 +28,4 @@ class TransactionSchema(BaseModel):
         description="The date when transaction is applied")
 
     class Config:
-        orm_mode = True
+        from_attributes = True

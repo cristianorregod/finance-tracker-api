@@ -21,4 +21,4 @@ class AccountSchema(BaseModel):
         None, description="The last transaction date of the account")
 
     class Config:
-        orm_mode = True
+        from_attributes = True

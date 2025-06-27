@@ -14,4 +14,4 @@ class CategorySchema(BaseModel):
         None, description="The icon of the category")
 
     class Config:
-        orm_mode = True
+        from_attributes = True

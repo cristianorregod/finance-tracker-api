@@ -12,7 +12,7 @@ class UserSchema(BaseModel):
                       description="The role of the user")
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class UserLoginSchema(BaseModel):
     email: str = Field(min_length=5, max_length=25,
