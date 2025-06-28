@@ -26,7 +26,7 @@ idna==3.7
 imagesize==1.4.1
 Jinja2==3.1.4
 libsql-client==0.3.1
-libsql-experimental==0.0.34
+libsql-experimental==0.0.55
 load-dotenv==0.1.0
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
@@ -55,7 +55,7 @@ sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.7
 sphinxcontrib-serializinghtml==1.1.10
 SQLAlchemy==2.0.31
-sqlalchemy-libsql==0.1.0
+sqlalchemy-libsql==0.2.0
 starlette==0.37.2
 tomli==2.0.1
 typer==0.12.3
