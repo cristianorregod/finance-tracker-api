@@ -8,6 +8,7 @@ from routes.transaction import transaction_router
 from routes.category import category_router
 from routes.parameters import parameter_router
 from routes.user import user_router
+from routes.chart import chart_router
 from middlewares.error_handler import ErrorHandler
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -37,3 +38,4 @@ app.include_router(category_router)
 app.include_router(transaction_router)
 app.include_router(parameter_router)
 app.include_router(user_router)
+app.include_router(chart_router)
