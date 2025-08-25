@@ -17,15 +17,29 @@ def login(user: UserLoginSchema):
     try:
         db = Session()
         user_db = UserService(db).get_user_by_email(user.email)
-        
+    
         if not user_db:
-            raise HTTPException(status_code=401, detail="Invalid credentials")
+            return JSONResponse(
+                content={
+                    "error": "Invalid credentials",
+                    "details": "The email does not exist"
+                },
+                status_code=401
+            )
+            #raise HTTPException(status_code=401, detail="Invalid credentials")
             
         user_dict = user_db.to_dict()
         password_manager = PasswordManager()
         
         if not password_manager.check_password(user.password, user_dict["password"]):
-            raise HTTPException(status_code=401, detail="Invalid credentials")
+            return JSONResponse(
+                content={
+                    "error": "Invalid credentials",
+                    "details": "You have entered an invalid password"
+                },
+                status_code=401
+            )
+            #raise HTTPException(status_code=401, detail="Invalid credentials")
             
         token: str = create_token({"email": user_dict['email'], "role": user_dict['role']})
         return JSONResponse(
