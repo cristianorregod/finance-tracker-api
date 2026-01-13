@@ -18,6 +18,7 @@ class ChartService():
                 func.sum(case((Transaction.type == 'INCOME', Transaction.amount), else_=0)).label('total_income'),
                 func.sum(case((Transaction.type == 'EXPENSE', Transaction.amount), else_=0)).label('total_expense'),
             )
+            .filter(extract('year', Transaction.transaction_date) == 2026)
             .group_by('month')
             .order_by('month')
         )
