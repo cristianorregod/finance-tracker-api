@@ -22,3 +22,14 @@ class AccountSchema(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class AccountUpdateSchema(BaseModel):
+    name: Optional[str] = Field(
+        None, min_length=3, max_length=25, description="The name of the account")
+    initial_balance: Optional[float] = Field(
+        None, ge=0, description="The initial balance of the account")
+    account_type: Optional[str] = Field(
+        None, min_length=5, max_length=20, description="The type of the account, e.g., bank, cash")
+    icon: Optional[str] = Field(
+        None, min_length=3, max_length=25, description="The icon of the account")

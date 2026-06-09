@@ -22,3 +22,14 @@ class BudgetSchema(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class BudgetUpdateSchema(BaseModel):
+    name: Optional[str] = Field(
+        None, min_length=3, max_length=25, description="The name of the budget")
+    description: Optional[str] = Field(
+        None, description="The description of the budget")
+    amount: Optional[float] = Field(
+        None, ge=0, description="The amount of the budget")
+    icon: Optional[str] = Field(
+        None, description="The icon of the budget")

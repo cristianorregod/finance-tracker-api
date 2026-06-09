@@ -29,3 +29,26 @@ class TransactionSchema(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class TransactionUpdateSchema(BaseModel):
+    from_account_id: Optional[int] = Field(
+        None, description="Reference to account from money was spent")
+    to_account_id: Optional[int] = Field(
+        None, description="Reference to account to money was received")
+    budget_id: Optional[int] = Field(
+        None, description="Reference to budget for the transaction")
+    category_id: Optional[int] = Field(
+        None, description="Reference to category for the transaction")
+    type: Optional[str] = Field(
+        None, min_length=3, max_length=25, description="Describe the transaction type")
+    description: Optional[str] = Field(
+        None, description="Short description of the transaction")
+    title: Optional[str] = Field(
+        None, min_length=15, max_length=25, description="Name of the transaction")
+    amount: Optional[float] = Field(
+        None, gt=0, description="The expense for the current transaction")
+    icon: Optional[str] = Field(
+        None, description="The icon of the transaction")
+    transaction_date: Optional[date] = Field(
+        None, description="The date when transaction is applied")
