@@ -13,6 +13,7 @@ class Budget(Base):
     name = Column(String, nullable=False)
     description = Column(String, nullable=True)
     amount = Column(Float, nullable=False)
+    period_type = Column(String, nullable=False, default='monthly')
     remaining_amount = Column(Float, nullable=False)
     spent_amount = Column(Float, nullable=True, default=0)
     icon = Column(String, nullable=True)
@@ -22,3 +23,4 @@ class Budget(Base):
                         onupdate=func.now(), nullable=False)
 
     transactions = relationship("Transaction", back_populates="budget")
+    cycles = relationship("BudgetCycle", back_populates="budget", cascade="all, delete-orphan")

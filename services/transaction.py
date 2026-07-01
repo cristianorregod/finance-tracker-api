@@ -5,6 +5,7 @@ from models.transaction import Transaction
 from models.account import Account
 from models.budget import Budget
 from schemas.transaction import TransactionSchema, TransactionUpdateSchema
+from services.budget_cycle import BudgetCycleService
 from utils.constants import TRANSACTION_TYPES
 
 
@@ -13,6 +14,7 @@ class TransactionService():
     # Constructor -> gets DB connection
     def __init__(self, db):
         self.db = db
+        self.cycle_service = BudgetCycleService(db)
 
     def read_transactions(self, filter: str):
         query = self.db.query(Transaction).options(
@@ -97,30 +99,37 @@ class TransactionService():
         account.current_balance = next_balance
         account.last_transaction_date = datetime.now()
 
-    def _apply_budget_effect(self, budget_id: int, amount: float):
+    def _sync_budget_snapshot(self, budget_id: int):
         budget = self._get_budget(budget_id)
-        spent_amount = budget.spent_amount or 0
-        remaining_amount = budget.remaining_amount if budget.remaining_amount is not None else budget.amount
+        self.cycle_service.sync_budget_snapshot(budget)
+
+    def _apply_budget_effect(self, budget_id: int, amount: float, transaction_date):
+        budget = self._get_budget(budget_id)
+        cycle = self.cycle_service.get_or_create_cycle(budget, transaction_date)
+        spent_amount = cycle.spent_amount or 0
+        remaining_amount = cycle.remaining_amount if cycle.remaining_amount is not None else cycle.limit_amount
         next_remaining_amount = remaining_amount - amount
 
         if next_remaining_amount < 0:
             raise ValueError("Budget remaining amount cannot be negative")
 
-        budget.remaining_amount = next_remaining_amount
-        budget.spent_amount = spent_amount + amount
-        budget.last_transaction_date = datetime.now()
+        cycle.remaining_amount = next_remaining_amount
+        cycle.spent_amount = spent_amount + amount
+        budget.last_transaction_date = datetime.combine(transaction_date, datetime.min.time())
+        self._sync_budget_snapshot(budget_id)
 
-    def _revert_budget_effect(self, budget_id: int, amount: float):
+    def _revert_budget_effect(self, budget_id: int, amount: float, transaction_date):
         budget = self._get_budget(budget_id)
-        spent_amount = budget.spent_amount or 0
+        cycle = self.cycle_service.get_or_create_cycle(budget, transaction_date)
+        spent_amount = cycle.spent_amount or 0
 
         if spent_amount - amount < 0:
             raise ValueError("Budget spent amount cannot be negative")
 
-        remaining_amount = budget.remaining_amount if budget.remaining_amount is not None else budget.amount
-        budget.remaining_amount = remaining_amount + amount
-        budget.spent_amount = spent_amount - amount
-        budget.last_transaction_date = datetime.now()
+        remaining_amount = cycle.remaining_amount if cycle.remaining_amount is not None else cycle.limit_amount
+        cycle.remaining_amount = remaining_amount + amount
+        cycle.spent_amount = spent_amount - amount
+        self._sync_budget_snapshot(budget_id)
 
     def _apply_transaction_effects(self, transaction):
         if transaction.type == TRANSACTION_TYPES['INCOME']:
@@ -130,7 +139,7 @@ class TransactionService():
         self._decrease_account_balance(transaction.from_account_id, transaction.amount)
 
         if transaction.budget_id is not None:
-            self._apply_budget_effect(transaction.budget_id, transaction.amount)
+            self._apply_budget_effect(transaction.budget_id, transaction.amount, transaction.transaction_date)
 
         if transaction.to_account_id is not None:
             self._increase_account_balance(transaction.to_account_id, transaction.amount)
@@ -143,7 +152,7 @@ class TransactionService():
         self._increase_account_balance(transaction.from_account_id, transaction.amount)
 
         if transaction.budget_id is not None:
-            self._revert_budget_effect(transaction.budget_id, transaction.amount)
+            self._revert_budget_effect(transaction.budget_id, transaction.amount, transaction.transaction_date)
 
         if transaction.to_account_id is not None:
             self._decrease_account_balance(transaction.to_account_id, transaction.amount)
@@ -155,6 +164,7 @@ class TransactionService():
             "budget_id",
             "type",
             "amount",
+            "transaction_date",
         ]
 
         return any(
