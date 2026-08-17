@@ -16,3 +16,4 @@ class Category(Base):
     icon = Column(String, nullable=True)
 
     transactions = relationship("Transaction", back_populates="category")
+    recurring_expenses = relationship("RecurringExpense", back_populates="category")

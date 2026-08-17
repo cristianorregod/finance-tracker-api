@@ -10,7 +10,7 @@ class TransactionSchema(BaseModel):
                                            description="Reference to account from money was spent")
     to_account_id: Optional[int] = Field(None,
                                          description="Reference to account to money was received")
-    budget_id: int = Field(None,
+    budget_id: Optional[int] = Field(None,
                            description="Reference to budget for the transaction")
     category_id: Optional[int] = Field(
         None, description="Reference to category for the transaction")
@@ -26,6 +26,8 @@ class TransactionSchema(BaseModel):
         None, description="The icon of the transaction")
     transaction_date: date = Field(
         description="The date when transaction is applied")
+    recurring_expense_id: Optional[int] = None
+    occurrence_period: Optional[str] = None
 
     class Config:
         from_attributes = True

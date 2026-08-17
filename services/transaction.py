@@ -172,8 +172,8 @@ class TransactionService():
             for field in financial_fields
         )
 
-    def create_transaction(self, transaction: TransactionSchema):
-        new_transaction = Transaction(**transaction.dict())
+    def create_transaction(self, transaction: TransactionSchema, commit=True):
+        new_transaction = Transaction(**transaction.model_dump())
         self._validate_transaction_payload({
             "from_account_id": new_transaction.from_account_id,
             "to_account_id": new_transaction.to_account_id,
@@ -190,7 +190,9 @@ class TransactionService():
         try:
             self._apply_transaction_effects(new_transaction)
             self.db.add(new_transaction)
-            self.db.commit()
+            self.db.flush()
+            if commit:
+                self.db.commit()
             self.db.refresh(new_transaction)
             return new_transaction
         except Exception:

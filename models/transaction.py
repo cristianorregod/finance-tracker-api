@@ -1,10 +1,17 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime, func, ForeignKey, Date
+from sqlalchemy import Column, Integer, String, Float, DateTime, func, ForeignKey, Date, Index
 from sqlalchemy.orm import relationship
 from config.database import Base
 
 
 class Transaction(Base):
     __tablename__ = 'transactions'
+    __table_args__ = (
+        Index(
+            'uq_transactions_recurring_period',
+            'recurring_expense_id', 'occurrence_period',
+            unique=True,
+        ),
+    )
 
     def to_dict(self):
         return {
@@ -13,6 +20,8 @@ class Transaction(Base):
             "to_account": self.to_account.to_dict() if self.to_account else None,
             "budget": self.budget.to_dict() if self.budget else None,
             "category": self.category.to_dict() if self.category else None,
+            "recurring_expense_id": self.recurring_expense_id,
+            "occurrence_period": self.occurrence_period,
             "type": self.type,
             "description": self.description,
             "title": self.title,
@@ -38,6 +47,8 @@ class Transaction(Base):
     amount = Column(Float, nullable=False)
     transaction_date = Column(Date, nullable=False)
     icon = Column(String, nullable=True)
+    recurring_expense_id = Column(Integer, ForeignKey('recurring_expenses.id'), nullable=True, index=True)
+    occurrence_period = Column(String, nullable=True)
     created_at = Column(DateTime, default=func.now(), nullable=False)
     updated_at = Column(DateTime, default=func.now(),
                         onupdate=func.now(), nullable=False)
@@ -48,3 +59,4 @@ class Transaction(Base):
                               to_account_id], back_populates="to_transactions")
     budget = relationship("Budget", back_populates="transactions")
     category = relationship("Category", back_populates="transactions")
+    recurring_expense = relationship("RecurringExpense", back_populates="transactions")

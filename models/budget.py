@@ -24,3 +24,4 @@ class Budget(Base):
 
     transactions = relationship("Transaction", back_populates="budget")
     cycles = relationship("BudgetCycle", back_populates="budget", cascade="all, delete-orphan")
+    recurring_expenses = relationship("RecurringExpense", back_populates="budget")

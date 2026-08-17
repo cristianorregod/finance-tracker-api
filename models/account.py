@@ -25,3 +25,4 @@ class Account(Base):
         "Transaction", foreign_keys='Transaction.from_account_id', back_populates="from_account")
     to_transactions = relationship(
         "Transaction", foreign_keys='Transaction.to_account_id', back_populates="to_account")
+    recurring_expenses = relationship("RecurringExpense", back_populates="account")
